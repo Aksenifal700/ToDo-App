@@ -12,11 +12,10 @@ public interface ICategoryRepository
     
     Task AddAsync(Category entity);
     
-    void Update(Category entity);
+    Task Update(Category entity);
     
-    void Delete(Category entity);
+    Task Delete(Category entity);
     
     Task<bool> ExistsAsync(Guid id, Guid userId);
     
-    Task SaveChangesAsync();
 }

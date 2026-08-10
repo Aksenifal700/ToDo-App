@@ -69,16 +69,19 @@ public class TaskItemRepository : ITaskItemRepository
     public async Task AddAsync(TaskItem entity)
     {
         await _context.Tasks.AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public void Update(TaskItem entity)
+    public async Task Update(TaskItem entity)
     {
         _context.Tasks.Update(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public void Delete(TaskItem entity)
+    public async Task Delete(TaskItem entity)
     {
         _context.Tasks.Remove(entity);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<bool> ExistsAsync(Guid id, Guid userId)
@@ -86,9 +89,5 @@ public class TaskItemRepository : ITaskItemRepository
         return await _context.Tasks
             .AnyAsync(t => t.Id == id && t.UserId == userId);
     }
-
-    public async Task SaveChangesAsync()
-    {
-        await _context.SaveChangesAsync();
-    }
+    
 }

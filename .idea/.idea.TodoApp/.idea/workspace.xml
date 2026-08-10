@@ -17,18 +17,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f234f3-9f87-4770-bba6-950e18704914" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Configuration/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/TaskItemRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/UserRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ICategoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ITaskItemRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/IUserRepository.cs" afterDir="false" />
+    <list default="true" id="b6f234f3-9f87-4770-bba6-950e18704914" name="Changes" comment="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/TodoApp.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/TodoApp.DataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/TodoApp.Interfaces.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/TodoApp.Interfaces.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/TaskItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/TaskItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ICategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ITaskItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ITaskItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/IUserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +172,7 @@
       <workItem from="1786037361050" duration="1131000" />
       <workItem from="1786279198564" duration="4506000" />
       <workItem from="1786284688988" duration="13047000" />
-      <workItem from="1786371195016" duration="13560000" />
+      <workItem from="1786371195016" duration="15216000" />
     </task>
     <task id="LOCAL-00001" summary="Initial solution structure">
       <option name="closed" value="true" />
@@ -194,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786312259174</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method">
+      <option name="closed" value="true" />
+      <created>1786385387339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1786385387340</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +221,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial solution structure" />
     <MESSAGE value="- Create Entities&#10;- Added Fluent API configuration&#10;- Connected PostgreSQL database&#10;- Created AppDbContext&#10;- Added required NuGet packets &#10;- Applied InitialCreate" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Create Entities&#10;- Added Fluent API configuration&#10;- Connected PostgreSQL database&#10;- Created AppDbContext&#10;- Added required NuGet packets &#10;- Applied InitialCreate" />
+    <MESSAGE value="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method" />
   </component>
 </project>

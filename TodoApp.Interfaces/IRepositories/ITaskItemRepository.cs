@@ -18,12 +18,9 @@ public interface ITaskItemRepository
     
     Task AddAsync(TaskItem entity);
 
-    void Update(TaskItem entity);
+    Task Update(TaskItem entity);
     
-    void Delete(TaskItem entity);
+    Task Delete(TaskItem entity);
     
     Task<bool> ExistsAsync(Guid id, Guid userId);
-    
-    Task SaveChangesAsync(); 
-
 }
