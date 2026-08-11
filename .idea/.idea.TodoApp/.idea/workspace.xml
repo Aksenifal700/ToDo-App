@@ -17,14 +17,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6f234f3-9f87-4770-bba6-950e18704914" name="Changes" comment="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method">
+    <list default="true" id="b6f234f3-9f87-4770-bba6-950e18704914" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/LoginDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/LoginResultDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/RegisterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/CategoryDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/CreateCategoryDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/UpdateCategoryDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Common/PagedResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Common/TaskQueryDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/CreateTaskDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/TaskDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/UpdateTaskDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/TaskItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/TaskItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.DataAccess/Database/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ICategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ITaskItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/ITaskItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IRepositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.BusinessLogic/TodoApp.BusinessLogic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/TodoApp.BusinessLogic.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +53,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/neepy/RiderProjects/TodoApp/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/neepy/RiderProjects/TodoApp/TodoApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/appsettings.json" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -172,7 +178,7 @@
       <workItem from="1786037361050" duration="1131000" />
       <workItem from="1786279198564" duration="4506000" />
       <workItem from="1786284688988" duration="13047000" />
-      <workItem from="1786371195016" duration="15216000" />
+      <workItem from="1786371195016" duration="23892000" />
     </task>
     <task id="LOCAL-00001" summary="Initial solution structure">
       <option name="closed" value="true" />
@@ -198,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786385387340</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- Delete SaveChangeAsync from repository and implemented it in every method separatly">
+      <option name="closed" value="true" />
+      <created>1786387262015</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1786387262015</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +236,7 @@
     <MESSAGE value="Initial solution structure" />
     <MESSAGE value="- Create Entities&#10;- Added Fluent API configuration&#10;- Connected PostgreSQL database&#10;- Created AppDbContext&#10;- Added required NuGet packets &#10;- Applied InitialCreate" />
     <MESSAGE value="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method" />
+    <MESSAGE value="- Delete SaveChangeAsync from repository and implemented it in every method separatly" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Delete SaveChangeAsync from repository and implemented it in every method separatly" />
   </component>
 </project>
