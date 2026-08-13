@@ -13,6 +13,7 @@
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="16.2.0" />
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
       <PackageReference Include="FluentValidation" Version="12.1.1" />
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     </ItemGroup>
@@ -22,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Auth\" />
       <Folder Include="Validators\" />
     </ItemGroup>
 

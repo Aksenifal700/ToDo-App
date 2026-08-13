@@ -1,6 +1,6 @@
 using AutoMapper;
-using TodoApp.DataAccess.Database.Entities;
 using TodoApp.Interfaces.DTOs.Auth;
+using TodoApp.Interfaces.Entities;
 
 namespace TodoApp.BusinessLogic.MappingProfiles;
 

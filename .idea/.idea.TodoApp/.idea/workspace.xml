@@ -18,19 +18,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f234f3-9f87-4770-bba6-950e18704914" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/LoginResultDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Auth/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/CategoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/CreateCategoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Category/UpdateCategoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Common/PagedResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/Common/TaskQueryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/CreateTaskDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/TaskDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/DTOs/TaskItem/UpdateTaskDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.API/JwtTokenGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/Services/AuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.Interfaces/DTOs/Auth/TokenGenerationDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IJwtTokenGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoApp.BusinessLogic/TodoApp.BusinessLogic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.BusinessLogic/TodoApp.BusinessLogic.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApp.Interfaces/IServices/ITaskItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApp.Interfaces/IServices/ITaskItemService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +47,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/neepy/RiderProjects/TodoApp/TodoApp.DataAccess/Database/Repositories/CategoryRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1246839d29201e3a70ea31cb97b0926bd0bc9ecf0fc17b763e7a8262b9e/Mapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApp/appsettings.json" root0="SKIP_HIGHLIGHTING" />
@@ -179,6 +173,8 @@
       <workItem from="1786279198564" duration="4506000" />
       <workItem from="1786284688988" duration="13047000" />
       <workItem from="1786371195016" duration="23892000" />
+      <workItem from="1786460690666" duration="11386000" />
+      <workItem from="1786534690665" duration="6977000" />
     </task>
     <task id="LOCAL-00001" summary="Initial solution structure">
       <option name="closed" value="true" />
@@ -212,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786387262015</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Added DTOs and moved them to Interfaces&#10;- Created AutoMapper profiles&#10;- Implemented CategoryService and TaskItemService&#10;- Added service interfaces&quot;">
+      <option name="closed" value="true" />
+      <created>1786474937531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1786474937531</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +241,7 @@
     <MESSAGE value="- Create Entities&#10;- Added Fluent API configuration&#10;- Connected PostgreSQL database&#10;- Created AppDbContext&#10;- Added required NuGet packets &#10;- Applied InitialCreate" />
     <MESSAGE value="- Added IUserRepository, ICategoryRepository, ITaskItemRepository&#10;- Implemented Repositories in DataAccess&#10;- - Registered repositories via extension method" />
     <MESSAGE value="- Delete SaveChangeAsync from repository and implemented it in every method separatly" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Delete SaveChangeAsync from repository and implemented it in every method separatly" />
+    <MESSAGE value="- Added DTOs and moved them to Interfaces&#10;- Created AutoMapper profiles&#10;- Implemented CategoryService and TaskItemService&#10;- Added service interfaces&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added DTOs and moved them to Interfaces&#10;- Created AutoMapper profiles&#10;- Implemented CategoryService and TaskItemService&#10;- Added service interfaces&quot;" />
   </component>
 </project>

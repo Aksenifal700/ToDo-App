@@ -1,9 +1,15 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using TodoApp.API;
+using TodoApp.API.Configurations;
+using TodoApp.BusinessLogic.Configurations;
 using TodoApp.DataAccess.Configuration;
 using TodoApp.DataAccess.Database;
+using TodoApp.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddJwtConfiguration(builder.Configuration);
 
 builder.Services.AddControllers();
 
@@ -13,7 +19,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddServices();
 builder.Services.AddRepositories();
+
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApp.DataAccess.Database.Entities;
+using TodoApp.Interfaces.Entities;
 using TodoApp.Interfaces.IRepositories;
 
 namespace TodoApp.DataAccess.Database.Repositories;

@@ -1,4 +1,4 @@
-using TodoApp.DataAccess.Database.Entities;
+using TodoApp.Interfaces.Entities;
 
 namespace TodoApp.Interfaces.IRepositories;
 

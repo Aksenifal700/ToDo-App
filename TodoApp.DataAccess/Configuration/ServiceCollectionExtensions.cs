@@ -1,16 +1,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using TodoApp.DataAccess.Database.Repositories;
 using TodoApp.Interfaces.IRepositories;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.DataAccess.Configuration;
 
 public static class ServiceCollectionExtensions
 {
-
-    public static void AddServices(this IServiceCollection services)
-    {
-    }
-
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();

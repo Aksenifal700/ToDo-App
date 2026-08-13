@@ -1,4 +1,4 @@
-namespace TodoApp.DataAccess.Database.Entities;
+namespace TodoApp.Interfaces.Entities;
 
 public class User
 {

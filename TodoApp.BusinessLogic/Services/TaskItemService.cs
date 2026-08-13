@@ -1,6 +1,6 @@
 using AutoMapper;
-using TodoApp.DataAccess.Database.Entities;
 using TodoApp.Interfaces.DTOs.TaskItem;
+using TodoApp.Interfaces.Entities;
 using TodoApp.Interfaces.IRepositories;
 using TodoApp.Interfaces.IServices;
 
