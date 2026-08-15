@@ -1,11 +1,11 @@
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using TodoApp.API;
 using TodoApp.API.Configurations;
 using TodoApp.BusinessLogic.Configurations;
+using TodoApp.BusinessLogic.IServices;
 using TodoApp.DataAccess.Configuration;
 using TodoApp.DataAccess.Database;
-using TodoApp.Interfaces;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

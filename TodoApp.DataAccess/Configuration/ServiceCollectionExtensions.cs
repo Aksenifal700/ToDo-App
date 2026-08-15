@@ -1,7 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using TodoApp.DataAccess.Database.Repositories;
-using TodoApp.Interfaces.IRepositories;
-using TodoApp.Interfaces.IServices;
+using TodoApp.Interfaces;
 
 namespace TodoApp.DataAccess.Configuration;
 

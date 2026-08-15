@@ -1,10 +1,8 @@
-using AutoMapper;
+using TodoApp.BusinessLogic.IServices;
 using TodoApp.BusinessLogic.Security;
 using TodoApp.Interfaces;
 using TodoApp.Interfaces.DTOs.Auth;
 using TodoApp.Interfaces.Entities;
-using TodoApp.Interfaces.IRepositories;
-using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.BusinessLogic.Services;
 
@@ -27,8 +25,8 @@ public class AuthService : IAuthService
         if (user is null)
             throw new Exception();
 
-        var isPasswordValid = _passwordHasher.VerifyHash(dto.Password, user.PasswordHash);
-        if (!isPasswordValid)
+        var isValid = _passwordHasher.VerifyPasswordHash(dto.Password, user.PasswordHash, user.PasswordSalt);
+        if (!isValid)
             throw new Exception();
         
         var jwtToken = _jwtTokenGenerator.GenerateJwtToken(new TokenGenerationDto
@@ -49,32 +47,24 @@ public class AuthService : IAuthService
     public async Task<LoginResultDto> RegisterAsync(RegisterDto dto)
     {
         var emailExists = await _userRepository.ExistsByEmailAsync(dto.Email);
-
         if (emailExists)
             throw new Exception("");
         
-        var passwordHash = _passwordHasher.HashPassword(dto.Password);
+        _passwordHasher.CreatePasswordHash(dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-        var user = new User
-        {
-            Id = Guid.NewGuid(),
-            Email = dto.Email,
-            PasswordHash = passwordHash,
-        };
-        
-        await _userRepository.AddAsync(user);
-
+        var userDto = await _userRepository.CreateUserAsync(dto, passwordHash, passwordSalt);
+       
         var jwtToken = _jwtTokenGenerator.GenerateJwtToken(new TokenGenerationDto
         {
-            UserId = user.Id,
+            UserId = userDto.Id,
             Email = dto.Email,
         });
 
         return new LoginResultDto
         {
             Token = jwtToken,
-            UserId = user.Id,
-            Email = user.Email,
+            UserId = userDto.Id,
+            Email = userDto.Email,
         };
     }
 }

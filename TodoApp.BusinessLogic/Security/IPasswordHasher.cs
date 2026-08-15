@@ -2,6 +2,6 @@ namespace TodoApp.BusinessLogic.Security;
 
 public interface IPasswordHasher
 {
-    string HashPassword(string password);
-    bool VerifyHash(string password, string hash);
+    void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt);
+    bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt);
 }

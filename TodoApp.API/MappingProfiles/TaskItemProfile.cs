@@ -2,7 +2,7 @@ using AutoMapper;
 using TodoApp.Interfaces.DTOs.TaskItem;
 using TodoApp.Interfaces.Entities;
 
-namespace TodoApp.BusinessLogic.MappingProfiles;
+namespace TodoApp.API.MappingProfiles;
 
 public class TaskItemProfile : Profile
 {
