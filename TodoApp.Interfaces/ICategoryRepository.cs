@@ -12,7 +12,7 @@ public interface ICategoryRepository
     
     Task<CategoryDto> AddAsync(CreateCategoryDto dto, Guid userId);
     
-    Task UpdateAsync(Guid id, UpdateCategoryDto dto, Guid userId);
+    Task <CategoryDto> UpdateAsync(Guid id, UpdateCategoryDto dto, Guid userId);
     
     Task DeleteAsync(Guid id, Guid userId);
     

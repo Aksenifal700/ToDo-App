@@ -35,9 +35,9 @@ public class CategoryService : ICategoryService
         return await _categoryRepository.AddAsync(dto, userId);
     }
     
-    public async Task UpdateAsync(Guid id, UpdateCategoryDto dto, Guid userId)
+    public async Task<CategoryDto> UpdateAsync(Guid id, UpdateCategoryDto dto, Guid userId)
     {
-       await _categoryRepository.UpdateAsync(id, dto, userId);
+       return await _categoryRepository.UpdateAsync(id, dto, userId);
     }
 
     public async Task DeleteAsync(Guid id, Guid userId)
