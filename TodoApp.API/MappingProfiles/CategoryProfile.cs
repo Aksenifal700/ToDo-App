@@ -1,6 +1,7 @@
 using AutoMapper;
+using TodoApp.API.Models.Request.Category;
+using TodoApp.API.Models.Resposne;
 using TodoApp.Interfaces.DTOs.Category;
-using TodoApp.Interfaces.Entities;
 
 namespace TodoApp.API.MappingProfiles;
 
@@ -8,8 +9,8 @@ public class CategoryProfile : Profile
 {
     public CategoryProfile()
     {
-        CreateMap<CreateCategoryDto, Category>();
-        CreateMap<UpdateCategoryDto, Category>();
-        CreateMap<Category, CategoryDto>();
+        CreateMap<CreateCategoryRequest, CreateCategoryDto>();
+        CreateMap<UpdateCategoryRequest, UpdateCategoryDto>();
+        CreateMap<CategoryDto, CategoryResponse>();
     }
 }

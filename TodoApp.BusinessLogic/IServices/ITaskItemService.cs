@@ -18,7 +18,7 @@ public interface ITaskItemService
     
     Task<TaskItemDto> CreateAsync(CreateTaskItemDto dto, Guid userId);
     
-    Task UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId);
+    Task<TaskItemDto> UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId);
     
     Task DeleteAsync(Guid id, Guid userId);  
     

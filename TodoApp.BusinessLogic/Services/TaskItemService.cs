@@ -47,9 +47,9 @@ public class TaskItemService : ITaskItemService
         return await _taskItemRepository.AddAsync(dto, userId);
     }
 
-    public async Task UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId)
+    public async Task<TaskItemDto> UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId)
     {
-        await _taskItemRepository.UpdateAsync(id, dto, userId);
+        return await _taskItemRepository.UpdateAsync(id, dto, userId);
     }
 
     public async Task DeleteAsync(Guid id, Guid userId)

@@ -51,7 +51,7 @@ public class TaskItemRepository : ITaskItemRepository
        return _mapper.Map<TaskItemDto>(task);
     }
 
-    public async Task UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId)
+    public async Task<TaskItemDto> UpdateAsync(Guid id, UpdateTaskItemDto dto, Guid userId)
     {
         var task = await _context.Tasks
             .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
@@ -63,6 +63,7 @@ public class TaskItemRepository : ITaskItemRepository
         task.UpdatedAt = DateTime.UtcNow;
         
         await _context.SaveChangesAsync();
+        return _mapper.Map<TaskItemDto>(task);
     }
 
     public async Task DeleteAsync(Guid id, Guid userId)
