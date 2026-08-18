@@ -7,7 +7,7 @@ namespace TodoApp.DataAccess.Configuration;
 
 public static class DatabaseConfiguration
 {
-    public static void Register(
+    public static void AddDatabase(
         IServiceCollection services, 
         IConfiguration configuration)
     {

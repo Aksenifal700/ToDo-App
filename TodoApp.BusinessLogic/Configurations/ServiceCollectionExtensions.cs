@@ -12,6 +12,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<ITaskItemService, TaskItemService>();
+        services.AddScoped<IAuthService, AuthService>();
         
         return services;
     }
