@@ -55,9 +55,9 @@ public class TaskItemRepository : ITaskItemRepository
     {
         var task = await _context.Tasks
             .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
-        
-        if(task is null)
-            throw new Exception("Task not found");
+
+        if (task is null)
+            return null;
         
         _mapper.Map(dto, task);
         task.UpdatedAt = DateTime.UtcNow;
@@ -66,16 +66,18 @@ public class TaskItemRepository : ITaskItemRepository
         return _mapper.Map<TaskItemDto>(task);
     }
 
-    public async Task DeleteAsync(Guid id, Guid userId)
+    public async Task<bool> DeleteAsync(Guid id, Guid userId)
     {
         var task = await _context.Tasks
             .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
-        
-        if(task is null)
-            throw new Exception("Task not found");
+
+        if (task is null)
+            return false;
         
         _context.Tasks.Remove(task);
         await _context.SaveChangesAsync();
+
+        return true;
     }
     
 

@@ -1,6 +1,6 @@
 using TodoApp.Interfaces.DTOs.TaskItem;
 
-namespace TodoApp.BusinessLogic.IServices;
+namespace TodoApp.Interfaces.IServices;
 
 public interface ITaskItemService
 {

@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using TodoApp.API.Helpers;
 using TodoApp.API.Models.Request.Task;
 using TodoApp.API.Models.Response;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.Interfaces.DTOs.TaskItem;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.API.Controllers;
 

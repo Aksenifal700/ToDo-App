@@ -2,27 +2,24 @@ using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 using TodoApp.API;
 using TodoApp.API.Configurations;
 using TodoApp.BusinessLogic.Configurations;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.DataAccess.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddJwtConfiguration(builder.Configuration);
+builder.Services.AddSwaggerConfiguration();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
-
+builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddRepositories();
+builder.Services.AddRedisCaching(builder.Configuration);
+
 builder.Services.AddServices();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(cfg => { }, typeof(Program).Assembly);
 builder.Services.AddFluentValidationAutoValidation();
-
-
-builder.Services.AddRepositories();
-builder.Services.AddServices();
 
 var app = builder.Build();
 

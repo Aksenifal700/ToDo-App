@@ -31,12 +31,12 @@ public class TaskItemConfiguration : IEntityTypeConfiguration<TaskItem>
                 
                 entity.Property(t => t.CreatedAt)
                         .IsRequired()
-                        .HasColumnType("timestamp without time zone")
+                        .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP");
                 
                 entity.Property(t => t.UpdatedAt)
                         .IsRequired(false)
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
                 
                 entity.Property(t => t.CategoryId)
                         .IsRequired(false);

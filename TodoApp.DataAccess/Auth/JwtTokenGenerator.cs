@@ -1,12 +1,13 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.Interfaces;
 using TodoApp.Interfaces.DTOs.Auth;
+using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
-namespace TodoApp.API;
+namespace TodoApp.DataAccess;
 
 public class JwtTokenGenerator : IJwtTokenGenerator
 {
@@ -16,13 +17,14 @@ public class JwtTokenGenerator : IJwtTokenGenerator
     public JwtTokenGenerator(IConfiguration configuration)
     {
         _configuration = configuration;
-        _tokenLifetime = _configuration.GetValue<TimeSpan>("Jwt:TokenLifetime");
+        _tokenLifetime = TimeSpan.Parse(_configuration["Jwt:TokenLifeTime"]!);
     }
 
     public string? GenerateJwtToken(TokenGenerationDto dto)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]);
+        string secret = _configuration["Jwt:Secret"];
+        var key = Encoding.UTF8.GetBytes(secret);
 
         var claims = new List<Claim>
         {

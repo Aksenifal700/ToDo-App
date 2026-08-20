@@ -23,7 +23,8 @@ public class UserRepository : IUserRepository
         {
             Id = Guid.NewGuid(),
             Email = dto.Email,
-            PasswordHash = passwordHash
+            PasswordHash = passwordHash,
+            PasswordSalt = passwordSalt
         };
         
         await _context.Users.AddAsync(user);

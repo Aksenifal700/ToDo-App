@@ -1,6 +1,6 @@
 using TodoApp.Interfaces.DTOs.Category;
 
-namespace TodoApp.BusinessLogic.IServices;
+namespace TodoApp.Interfaces.IServices;
 
 public interface ICategoryService
 {

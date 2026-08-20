@@ -2,8 +2,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.API.Models.Request.Auth;
 using TodoApp.API.Models.Resposne;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.Interfaces.DTOs.Auth;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.API.Controllers;
 

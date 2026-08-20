@@ -20,7 +20,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         
         entity.Property(c => c.CreatedAt)
             .IsRequired()
-            .HasColumnType("timestamp without time zone")
+            .HasColumnType("timestamp with time zone")
             .HasDefaultValueSql("CURRENT_TIMESTAMP");
         
         entity.ToTable("Category");

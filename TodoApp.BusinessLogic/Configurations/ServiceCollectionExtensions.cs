@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.BusinessLogic.Security;
 using TodoApp.BusinessLogic.Services;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.BusinessLogic.Configurations;
 

@@ -7,12 +7,14 @@ namespace TodoApp.DataAccess.Configuration;
 
 public static class DatabaseConfiguration
 {
-    public static void AddDatabase(
+    public static  IServiceCollection AddDatabase(this 
         IServiceCollection services, 
         IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options => 
             options.UseNpgsql(
                 configuration.GetConnectionString("DefaultConnection")));
+        
+        return services;
     }
 }

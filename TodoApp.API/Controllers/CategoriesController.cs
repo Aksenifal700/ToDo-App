@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using TodoApp.API.Helpers;
 using TodoApp.API.Models.Request.Category;
 using TodoApp.API.Models.Resposne;
-using TodoApp.BusinessLogic.IServices;
 using TodoApp.Interfaces.DTOs.Category;
 using TodoApp.Interfaces.Entities;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.API.Controllers;
 

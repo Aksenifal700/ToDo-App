@@ -13,5 +13,8 @@ public class TaskItemProfile : Profile
         CreateMap<CreateTaskRequest, CreateTaskItemDto>();
         CreateMap<UpdateTaskRequest, UpdateTaskItemDto>();
         CreateMap<TaskItemDto, TaskResponse>();
+        CreateMap<CreateTaskItemDto, TaskItem>();
+        CreateMap<UpdateTaskItemDto, TaskItem>();
+        CreateMap<TaskItem, TaskItemDto>();
     }
 }

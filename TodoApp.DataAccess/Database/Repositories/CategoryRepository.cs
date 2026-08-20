@@ -18,10 +18,10 @@ public class CategoryRepository : ICategoryRepository
     }
 
 
-    public async Task<CategoryDto?> GetByIdAsync(Guid guid, Guid id)
+    public async Task<CategoryDto?> GetByIdAsync(Guid id, Guid userId)
     {
         var category = await _context.Categories
-            .FirstOrDefaultAsync(c => c.Id == id);
+            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == userId);
         
         return category is null
             ? null
@@ -67,7 +67,7 @@ public class CategoryRepository : ICategoryRepository
             .FirstOrDefaultAsync(c => c.Id == id && c.UserId == userId);
 
         if (category is null)
-            throw new Exception("Category not found");
+            return null;
 
         _mapper.Map(dto, category);
         await _context.SaveChangesAsync();
@@ -75,16 +75,18 @@ public class CategoryRepository : ICategoryRepository
         return _mapper.Map<CategoryDto>(category);
     }
 
-    public async Task DeleteAsync(Guid id, Guid userId)
+    public async Task<bool> DeleteAsync(Guid id, Guid userId)
     {
         var category = await _context.Categories
             .FirstOrDefaultAsync(c => c.Id == id && c.UserId == userId);
 
         if (category is null)
-            throw new Exception("Category not found");
+            return false;
 
         _context.Categories.Remove(category);
         await _context.SaveChangesAsync();
+
+        return true;
     }
 
     public async Task<bool> ExistsAsync(Guid id, Guid userId)

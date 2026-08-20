@@ -1,8 +1,10 @@
-using TodoApp.BusinessLogic.IServices;
+using System.Security.Authentication;
+using TodoApp.BusinessLogic.Exceptions;
 using TodoApp.BusinessLogic.Security;
 using TodoApp.Interfaces;
 using TodoApp.Interfaces.DTOs.Auth;
 using TodoApp.Interfaces.Entities;
+using TodoApp.Interfaces.IServices;
 
 namespace TodoApp.BusinessLogic.Services;
 
@@ -23,11 +25,11 @@ public class AuthService : IAuthService
     {
         var user = await _userRepository.GetByEmailAsync(dto.Email);
         if (user is null)
-            throw new Exception();
+            throw new InvalidCredentialException();
 
         var isValid = _passwordHasher.VerifyPasswordHash(dto.Password, user.PasswordHash, user.PasswordSalt);
         if (!isValid)
-            throw new Exception();
+            throw new InvalidCredentialException();
         
         var jwtToken = _jwtTokenGenerator.GenerateJwtToken(new TokenGenerationDto
         {
@@ -48,7 +50,7 @@ public class AuthService : IAuthService
     {
         var emailExists = await _userRepository.ExistsByEmailAsync(dto.Email);
         if (emailExists)
-            throw new Exception("");
+            throw new EmailAlreadyExistsException("Email already exists");
         
         _passwordHasher.CreatePasswordHash(dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
