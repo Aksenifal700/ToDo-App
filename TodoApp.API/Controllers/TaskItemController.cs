@@ -53,8 +53,6 @@ public class TaskItemController : ControllerBase
         var userId = User.GetUserId();
         
         var task = await _taskItemService.GetByIdAsync(id, userId);
-        if(task is null)
-            return NotFound();
         
         var response = _mapper.Map<TaskResponse>(task);
         return Ok(response);

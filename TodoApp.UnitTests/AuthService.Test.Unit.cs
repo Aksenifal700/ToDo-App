@@ -1,4 +1,5 @@
-using System.Security.Authentication;
+
+
 using Moq;
 using TodoApp.BusinessLogic.Exceptions;
 using TodoApp.BusinessLogic.Security;
@@ -37,7 +38,7 @@ public class AuthServiceTests
             .ReturnsAsync((UserDto?)null);
 
         // Act  
-        await Assert.ThrowsAsync<InvalidCredentialException>(
+        await Assert.ThrowsAsync<InvalidCredentialsException>(
             () => _authService.LoginAsync(dto));
 
         //Assert
@@ -72,13 +73,13 @@ public class AuthServiceTests
             .Setup(x => x.VerifyPasswordHash(dto.Password, user.PasswordHash, user.PasswordSalt))
             .Returns(false);
 
-        // Act & Assert
-        await Assert.ThrowsAsync<InvalidCredentialException>(
-            () => _authService.LoginAsync(dto));
+        // Act
+        var exception = await Record.ExceptionAsync(() => _authService.LoginAsync(dto));
 
+        // Assert
+        Assert.IsType<InvalidCredentialsException>(exception);
         _jwtTokenGeneratorMock.Verify(
-            x => x.GenerateJwtToken(It.IsAny<TokenGenerationDto>()),
-            Times.Never);
+            x => x.GenerateJwtToken(It.IsAny<TokenGenerationDto>()), Times.Never);
     }
 
     [Fact]
@@ -128,16 +129,16 @@ public class AuthServiceTests
             .Setup(x => x.ExistsByEmailAsync(dto.Email))
             .ReturnsAsync(true);
 
-        // Act & Assert
-        await Assert.ThrowsAsync<EmailAlreadyExistsException>(
-            () => _authService.RegisterAsync(dto));
+        // Act
+        var exception = await Record.ExceptionAsync(() => _authService.RegisterAsync(dto));
 
+        // Assert
+        Assert.IsType<AlreadyExistsException>(exception);
         _userRepositoryMock.Verify(
             x => x.CreateUserAsync(It.IsAny<RegisterDto>(), It.IsAny<byte[]>(), It.IsAny<byte[]>()),
             Times.Never);
         _jwtTokenGeneratorMock.Verify(
-            x => x.GenerateJwtToken(It.IsAny<TokenGenerationDto>()),
-            Times.Never);
+            x => x.GenerateJwtToken(It.IsAny<TokenGenerationDto>()), Times.Never);
     }
 
     [Fact]

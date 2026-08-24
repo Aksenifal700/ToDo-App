@@ -42,9 +42,6 @@ public class CategoriesController : ControllerBase
         
         var category = await _categoryService.GetByIdAsync(id, userId);
         
-        if (category is null)
-            return NotFound();
-        
         var response = _mapper.Map<CategoryResponse>(category);
         return Ok(response);
     }

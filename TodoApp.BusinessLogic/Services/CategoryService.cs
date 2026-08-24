@@ -19,9 +19,14 @@ public class CategoryService : ICategoryService
     
     public async Task<CategoryDto?> GetByIdAsync(Guid id, Guid userId)
     {
-        return await _cachedQuery.GetOrSetAsync(
+        var result = await _cachedQuery.GetOrSetAsync(
             $"category:{userId}:{id}", 
             () => _categoryRepository.GetByIdAsync(id, userId));
+        
+        if(result is null)
+            throw new NotFoundException("Category not found");
+        
+        return result;
     }
 
     public async Task<List<CategoryDto>> GetByUserIdAsync(Guid userId)

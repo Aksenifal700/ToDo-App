@@ -97,7 +97,7 @@ public class CategoryServiceTests
         var userId = Guid.NewGuid();
         
         _categoryRepositoryMock
-            .Setup(x => x.GetByUserIdAsync(userId))!
+            .Setup(x => x.GetByUserIdAsync(userId))
             .ReturnsAsync((List<CategoryDto>?)null);
         CacheMockHelper.SetupPassThrough<List<CategoryDto>>(_cachedQueryServiceMock);
         
@@ -135,7 +135,7 @@ public class CategoryServiceTests
     }
 
     [Fact]
-    public async Task CreateAsync_ShouldTHrowAlreadyExistsException_WhenCategoryAlreadyExists()
+    public async Task CreateAsync_ShouldThrowAlreadyExistsException_WhenCategoryAlreadyExists()
     {
         //Arrange
         var userId = Guid.NewGuid();
@@ -153,6 +153,11 @@ public class CategoryServiceTests
         //Assert
         _categoryRepositoryMock
             .Verify(x => x.GetByNameAndUserIdAsync(dto.Name, userId), Times.Once);
+        
+        _categoryRepositoryMock.Verify(x => x.AddAsync(
+            It.IsAny<CreateCategoryDto>(),
+            It.IsAny<Guid>()), 
+            Times.Never);
     }
 
     [Fact]
@@ -231,8 +236,11 @@ public class CategoryServiceTests
             .Setup(x => x.DeleteAsync(id, userId))
             .ReturnsAsync(false);
 
-        // Act & Assert
-        await Assert.ThrowsAsync<NotFoundException>(
+        // Act
+        var exception = await Record.ExceptionAsync(
             () => _categoryService.DeleteAsync(id, userId));
+
+        // Assert
+        Assert.IsType<NotFoundException>(exception);
     }
 }
